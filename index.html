@@ -1,0 +1,99 @@
+<!doctype HTML>
+    <html>
+	<head>
+		<title>codedamn HTML Playground</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="/style.css" />
+	</head>
+	<body>
+
+        <button id="SeeSignUpPopup">Register</button>
+        <button id="SeeLoginPopup">Login</button>
+        <button id="SeePostPopup">Post</button>
+
+        <div class = "SignUpPopup" id = "SignUpPopup">
+        <h1>Sign Up</h1>
+        <div class="form-control">
+            <input type="text" required="" id = "userRegisterEmail">
+            <label>
+                <span style="transition-delay:0ms">E</span><span                style="transition-delay:50ms">m</span><span         style="transition-delay:100ms">a</span><span         style="transition-delay:150ms">i</span><span       style="transition-delay:200ms">l</span>
+            </label>
+        </div>
+        <div class="form-control">
+            <input type="text" required="" id = "userRegisterName">
+            <label>
+                <span style="transition-delay:0ms">F</span><span                style="transition-delay:50ms">i</span><span         style="transition-delay:100ms">r</span><span         style="transition-delay:150ms">s</span><span       style="transition-delay:200ms">t</span><span       style="transition-delay:200ms"> </span><span       style="transition-delay:200ms">N</span><span       style="transition-delay:200ms">a</span><span       style="transition-delay:200ms">m</span><span       style="transition-delay:200ms">e</span>
+            </label>
+        </div>
+        <div class="form-control">
+            <input type="password" required="" id = "userRegisterPassword">
+            <label>
+                <span style="transition-delay:0ms">P</span><span                style="transition-delay:50ms">a</span><span         style="transition-delay:100ms">s</span><span         style="transition-delay:150ms">s</span><span       style="transition-delay:200ms">w</span><span       style="transition-delay:200ms">o</span><span       style="transition-delay:200ms">r</span><span       style="transition-delay:200ms">d</span>
+            </label>
+        </div>
+        <button id="register">Register</button>
+        <h5></h5>
+        <button id="backRegister">Go Back</button>
+        </div>
+
+        <div class = "LoginPopup" id = "LoginPopup">
+        <h1>Login</h1>
+        <div class="form-control">
+            <input type="text" required="" id = "userLoginEmail">
+            <label>
+                <span style="transition-delay:0ms">E</span><span                style="transition-delay:50ms">m</span><span         style="transition-delay:100ms">a</span><span         style="transition-delay:150ms">i</span><span       style="transition-delay:200ms">l</span>
+            </label>
+        </div>
+        <div class="form-control">
+            <input type="password" required="" id = "userLoginPassword">
+            <label>
+                <span style="transition-delay:0ms">P</span><span                style="transition-delay:50ms">a</span><span         style="transition-delay:100ms">s</span><span         style="transition-delay:150ms">s</span><span       style="transition-delay:200ms">w</span><span       style="transition-delay:200ms">o</span><span       style="transition-delay:200ms">r</span><span       style="transition-delay:200ms">d</span>
+            </label>
+        </div>
+        <button id="login">Login</button>
+        <h5></h5>
+        <button id="backLogin">Go Back</button>
+        </div>
+
+
+        <div class = "PostPopup" id = "PostPopup">
+        <h1>Post</h1>
+        <div class="form-control">
+            <input type="text" required="" id = "titleQuestion">
+            <label>
+                <span style="transition-delay:0ms">T</span><span                style="transition-delay:50ms">i</span><span         style="transition-delay:100ms">t</span><span         style="transition-delay:150ms">l</span><span       style="transition-delay:200ms">e</span>
+            </label>
+        </div>
+        <div class="form-control">
+            <input type="text" required="" id = "questionQuestion">
+            <label>
+                <span style="transition-delay:0ms">Q</span><span                style="transition-delay:50ms">u</span><span         style="transition-delay:100ms">e</span><span         style="transition-delay:150ms">s</span><span       style="transition-delay:200ms">t</span><span       style="transition-delay:200ms">i</span><span       style="transition-delay:200ms">o</span><span       style="transition-delay:200ms">n</span>
+            </label>
+        </div>
+        <div class="form-control">
+            <input type="text" required="" id = "subjectQuestion">
+            <label>
+                <span style="transition-delay:0ms">S</span><span                style="transition-delay:50ms">u</span><span         style="transition-delay:100ms">b</span><span         style="transition-delay:150ms">j</span><span       style="transition-delay:200ms">e</span><span       style="transition-delay:200ms">c</span><span       style="transition-delay:200ms">t</span>
+            </label>
+        </div>
+        <button id="post">Post Question</button>
+        <h5></h5>
+        <button id="backPost">Go Back</button>
+        </div>
+
+        
+        <h1>View Posts</h1>
+        <div id="Posts" class="Posts">
+          <div id="StudentPost">
+            <!-- posts go here (?)-->
+          </div>
+        </div>
+
+        <div id = "overlay" class = "overlay"></div>
+
+        <script scr="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+        <script type="module" src="script.js"></script>
+
+	</body>
+</html>
