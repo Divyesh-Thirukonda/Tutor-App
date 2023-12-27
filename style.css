@@ -24,7 +24,7 @@ body {
 
 .form-control {
   position: relative;
-  margin: 20px 0 40px;
+  margin: 20px 0 20px;
   width: 190px;
 }
 
@@ -77,6 +77,9 @@ body {
   padding: 20px;
   text-align: center;
 }
+.headerr {
+  text-align: right;
+}
 
 .content {
   display: flex;
@@ -93,6 +96,14 @@ body {
   padding: 20px;
 }
 
+.logo {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+}
 
 /* Header styles */
 header {
@@ -101,8 +112,11 @@ header {
   padding: 20px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
-
+.headerr {
+  justify-content: flex-end;
+}
 header h1 {
   margin: 0;
 }
@@ -131,7 +145,7 @@ nav a {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 50%;
-  height: 70%;
+  height: 90%;
   z-index: 2;
 
   
@@ -140,11 +154,10 @@ nav a {
   align-items: center;
   justify-content: center;
   
-  
 
   border: 3px solid rgb(25, 26, 29);
   background-color: rgb(213, 242, 250, 1);
-  padding: 20px;
+  padding: 10px;
   margin-bottom: 20px;
   border-radius: 10px;
 }
