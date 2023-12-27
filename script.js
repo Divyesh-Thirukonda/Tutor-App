@@ -81,7 +81,9 @@ function PostQuestion() {
         Date: formattedToday,
         Title: userTitlePostText.value,
         Subject: userSubjectPostText.value,
-        Question: userQuestionPostText.value
+        Question: userQuestionPostText.value,
+        Response: "No Responses Yet",
+        ZUsername: Cookies.get("userEmail")
     })
     .then(()=>{
         console.log("Data added successfully");
@@ -127,16 +129,23 @@ function FindData() {
                 let question = document.createElement("p"); //question
                 let subject = document.createElement("div"); // subject
                 let title = document.createElement("h2"); // title
+                let commentInput = document.createElement("div"); // title
+                let response = document.createElement("div"); // title
+
                 
                 dateText.setAttribute("class", "Date");
                 question.setAttribute("class", "Question");
+                response.setAttribute("class", "Question");
                 subject.setAttribute("class", "Subject");
                 title.setAttribute("class", "Title");
+                commentInput.setAttribute("class", "form-control");
+                commentInput.innerHTML = '<input placeholder="Answer Here" type="text" required="" id = "titleQuestion">';
 
                 dateText.innerText = item[0][0].toString();
                 question.innerText = item[0][1].toString();
-                subject.innerText = item[0][2].toString();
-                title.innerText = "[" + item[0][2].toString() + "] " + item[0][3].toString();
+                subject.innerText = item[0][3].toString();
+                title.innerText = "[" + item[0][3].toString() + "] " + item[0][4].toString();
+                response.innerText = "Answer: " + item[0][2].toString();
                 
 
                 let btnReply = document.createElement("button");
@@ -151,7 +160,41 @@ function FindData() {
                 actualPost.appendChild(title);
                 actualPost.appendChild(dateText);
                 actualPost.appendChild(question);
+                actualPost.appendChild(commentInput);
                 actualPost.appendChild(btnReply);
+                actualPost.appendChild(response);
+
+                btnReply.addEventListener("click", function() {
+                    console.log(Cookies.get("userEmail"));
+                    let date = item[0][0].toString();
+                    let title = item[0][4].toString();
+                    let subject = item[0][3].toString();
+                    let question = item[0][1].toString();
+                    let response = commentInput.querySelector('input').value;
+                    let usernameOfComment = item[0][5].toString();
+                
+
+//  REPLACE PEOPLE/ WITH THE ACTUAL PERSON WHO POSTED
+
+// update db of his reponse
+
+    update(ref(db, "People/"+ usernameOfComment.replace(".", "").replace(".", "").replace(".", "").replace("]", "").replace("[", "").replace("$", "").replace("#", "")),{
+        Date: date,
+        Title: title,
+        Subject: subject,
+        Question: question,
+        Response: response,
+        ZUsername: usernameOfComment
+    })
+    .then(()=>{
+        console.log("Data added successfully");
+        FindData();
+    })
+    .catch((error)=>{
+        alert(error.message);
+    });
+
+                });
             });
 
         } else {
@@ -220,6 +263,19 @@ var userRegisterPasswordText = document.querySelector("#userRegisterPassword");
 
 var userLoginEmailText = document.querySelector("#userLoginEmail");
 var userLoginPasswordText = document.querySelector("#userLoginPassword");
+
+var IntroUser = document.querySelector("#HelloUser");
+
+if (userEmail == null || userEmail == "") {
+    IntroUser.innerText = "";
+    console.log(userEmail);
+} else {
+    console.log(userEmail);
+    IntroUser.innerText = userEmail;
+    seeRegisterBtn.style.visibility = "hidden";
+    seeLoginBtn.style.visibility = "hidden";
+}
+
 
 var userEmail = "";
 
